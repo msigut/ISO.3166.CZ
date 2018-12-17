@@ -1,4 +1,4 @@
-﻿using CsvHelper.Configuration;
+using CsvHelper.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +25,7 @@ namespace ISO3166CZ
 		public string Name { get; set; }
 
 		/// <summary>
-		/// vrati vsechny zeme a jejich nastaveni
+		/// get all ISO 3166-1 country data
 		/// </summary>
 		public static IEnumerable<Country> GetCountries()
 		{
