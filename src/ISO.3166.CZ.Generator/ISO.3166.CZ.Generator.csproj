@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <RootNamespace>ISO3166CZ.Generator</RootNamespace>
+    <LangVersion>7.3</LangVersion>
+    <AssemblyName>ISO3166CZ.Generator</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CsvHelper" Version="12.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ISO.3166.CZ\ISO.3166.CZ.csproj" />
+  </ItemGroup>
+
+</Project>
