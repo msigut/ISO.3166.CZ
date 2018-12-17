@@ -1,4 +1,4 @@
-﻿using CsvHelper;
+using CsvHelper;
 using System;
 using System.IO;
 using System.Text;
@@ -21,7 +21,7 @@ namespace ISO3166CZ.Generator
 				var csv = new CsvReader(reader);
 				csv.Configuration.RegisterClassMap<CsvCountryMapper>();
 
-				var countries = csv.GetRecords<Country>();
+				var countries = csv.GetRecords<CsvCountry>();
 				foreach (var c in countries)
 				{
 					var tab = "\t\t";

@@ -5,10 +5,17 @@
     <RootNamespace>ISO3166CZ</RootNamespace>
     <AssemblyName>ISO3166CZ</AssemblyName>
     <LangVersion>7.3</LangVersion>
+    <Authors>Martin Šigut</Authors>
+    <Company>Algorim s.r.o.</Company>
+    <Description>ISO 3166-1 country codes + names of countries in Czech (alpha-2 and alpha-3) .NET Standard 2.0 Library</Description>
+    <Copyright>Martin Šigut, Algorim</Copyright>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/msigut/ISO.3166.CZ/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/msigut/ISO.3166.CZ</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/msigut/ISO.3166.CZ</RepositoryUrl>
+    <PackageTags>ISO 3166-1 country codes alpha-2 alpha-3</PackageTags>
+    <Version>1.0.2</Version>
+    <PackageIconUrl></PackageIconUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="CsvHelper" Version="12.1.0" />
-  </ItemGroup>
 
 </Project>
