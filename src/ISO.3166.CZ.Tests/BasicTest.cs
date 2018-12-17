@@ -7,7 +7,7 @@ namespace ISO3166CZ.Tests
 		[Fact]
 		public void TestEnum()
 		{
-			Assert.NotEmpty(Alpha2Country.CZ.GetName());
+			Assert.NotEmpty(Alpha2Country.FR.GetName());
 			Assert.NotEmpty(Alpha3Country.CZE.GetName());
 			Assert.True(Alpha2Country.CZ > 0);
 			Assert.True(Alpha3Country.CZE > 0);
