@@ -22,6 +22,10 @@ namespace ISO3166CZ
 		/// nazev zeme (CZ)
 		/// </summary>
 		public string Name { get; set; }
+		/// <summary>
+		/// alternativni nazev zeme (CZ)
+		/// </summary>
+		public string NameAlt { get; set; }
 
 		/// <summary>
 		/// get all ISO 3166-1 country data
@@ -39,6 +43,7 @@ namespace ISO3166CZ
 					Alpha2 = (Alpha2Country)(int)numeric,
 					Alpha3 = (Alpha3Country)(int)numeric,
 					Name = ((Alpha2Country)(int)numeric).GetName(),
+					NameAlt = ((Alpha2Country)(int)numeric).GetNameAlt(),
 				});
 			}
 			return result;

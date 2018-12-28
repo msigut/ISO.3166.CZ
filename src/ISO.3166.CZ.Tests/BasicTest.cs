@@ -24,6 +24,7 @@ namespace ISO3166CZ.Tests
 			Assert.Contains(all, x => x.Alpha2 == Alpha2Country.CZ);
 			Assert.Contains(all, x => x.Alpha3 == Alpha3Country.CZE);
 			Assert.Contains(all, x => x.Name == Alpha3Country.CZE.GetName());
+			Assert.Contains(all, x => x.NameAlt == Alpha3Country.HKG.GetNameAlt());
 		}
 	}
 }

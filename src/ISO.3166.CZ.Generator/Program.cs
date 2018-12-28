@@ -17,6 +17,8 @@ namespace ISO3166CZ.Generator
 			var enumAlfa3 = new StringBuilder();
 			var nameAlfa2 = new StringBuilder();
 			var nameAlfa3 = new StringBuilder();
+			var nameAltAlfa2 = new StringBuilder();
+			var nameAltAlfa3 = new StringBuilder();
 
 			#region JSON
 
@@ -54,35 +56,51 @@ namespace ISO3166CZ.Generator
 				{
 					// find JSON territory, when different names, use for comments
 					var jsonName = jsonCountries.Where(x => x.Alpha2 == c.Alpha2).Select(x => x.Name).FirstOrDefault();
-					jsonName = c.Name.Trim() == jsonName.Trim() ? "" : $" ; {jsonName}";
+					var jsonComment = c.Name.Trim() == jsonName.Trim() ? "" : $" ; {jsonName}";
 
 					var tab = "\t\t";
 					// Alfa2 - enum
 					enumAlfa2.AppendLine($"{tab}/// <summary>");
-					enumAlfa2.AppendLine($"{tab}/// {c.Name}{jsonName} ({c.Numeric})");
+					enumAlfa2.AppendLine($"{tab}/// {c.Name}{jsonComment} ({c.Numeric})");
 					enumAlfa2.AppendLine($"{tab}/// </summary>");
 					enumAlfa2.AppendLine($"{tab}{c.Alpha2} = {c.Numeric},");
 					// Alfa3 - enum
 					enumAlfa3.AppendLine($"{tab}/// <summary>");
-					enumAlfa3.AppendLine($"{tab}/// {c.Name}{jsonName} ({c.Numeric})");
+					enumAlfa3.AppendLine($"{tab}/// {c.Name}{jsonComment} ({c.Numeric})");
 					enumAlfa3.AppendLine($"{tab}/// </summary>");
 					enumAlfa3.AppendLine($"{tab}{c.Alpha3} = {c.Numeric},");
 
 					tab = "\t\t\t\t";
 					// Alfa2 - name
 					nameAlfa2.AppendLine($"{tab}/// <summary>");
-					nameAlfa2.AppendLine($"{tab}/// {c.Name}{jsonName} ({c.Numeric})");
+					nameAlfa2.AppendLine($"{tab}/// {c.Name}{jsonComment} ({c.Numeric})");
 					nameAlfa2.AppendLine($"{tab}/// </summary>");
 					nameAlfa2.AppendLine($"{tab}case Alpha2Country.{c.Alpha2}:");
 					nameAlfa2.AppendLine($"{tab}\treturn \"{c.Name}\";");
 					nameAlfa2.AppendLine();
 					// Alfa3 - name
 					nameAlfa3.AppendLine($"{tab}/// <summary>");
-					nameAlfa3.AppendLine($"{tab}/// {c.Name}{jsonName} ({c.Numeric})");
+					nameAlfa3.AppendLine($"{tab}/// {c.Name}{jsonComment} ({c.Numeric})");
 					nameAlfa3.AppendLine($"{tab}/// </summary>");
 					nameAlfa3.AppendLine($"{tab}case Alpha3Country.{c.Alpha3}:");
 					nameAlfa3.AppendLine($"{tab}\treturn \"{c.Name}\";");
 					nameAlfa3.AppendLine();
+
+					tab = "\t\t\t\t";
+					// Alfa2 - alternative name
+					nameAltAlfa2.AppendLine($"{tab}/// <summary>");
+					nameAltAlfa2.AppendLine($"{tab}/// {c.Name}{jsonComment} ({c.Numeric})");
+					nameAltAlfa2.AppendLine($"{tab}/// </summary>");
+					nameAltAlfa2.AppendLine($"{tab}case Alpha2Country.{c.Alpha2}:");
+					nameAltAlfa2.AppendLine($"{tab}\treturn \"{jsonName}\";");
+					nameAltAlfa2.AppendLine();
+					// Alfa3 - alternative name
+					nameAltAlfa3.AppendLine($"{tab}/// <summary>");
+					nameAltAlfa3.AppendLine($"{tab}/// {c.Name}{jsonComment} ({c.Numeric})");
+					nameAltAlfa3.AppendLine($"{tab}/// </summary>");
+					nameAltAlfa3.AppendLine($"{tab}case Alpha3Country.{c.Alpha3}:");
+					nameAltAlfa3.AppendLine($"{tab}\treturn \"{jsonName}\";");
+					nameAltAlfa3.AppendLine();
 				}
 			}
 
@@ -129,6 +147,18 @@ namespace ISO3166CZ
 					throw new ArgumentException($""Unknown country: '{country}'."");
 			}
 		}
+
+		public static string GetNameAlt(this Alpha2Country country)
+		{
+			switch (country)
+			{
+"
++ nameAltAlfa2.ToString() +
+@"
+				default:
+					throw new ArgumentException($""Unknown country: '{country}'."");
+			}
+		}
 	}
 }");
 
@@ -149,7 +179,19 @@ namespace ISO3166CZ
 					throw new ArgumentException($""Unknown country: '{country}'."");
 			}
 		}
-	}
+
+		public static string GetNameAlt(this Alpha3Country country)
+		{
+			switch (country)
+			{
+"
++ nameAltAlfa3.ToString() +
+@"
+				default:
+					throw new ArgumentException($""Unknown country: '{country}'."");
+			}
+		}
+}
 }");
 
 			#endregion
