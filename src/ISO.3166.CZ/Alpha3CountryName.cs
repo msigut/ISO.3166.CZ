@@ -171,7 +171,7 @@ namespace ISO3166CZ
 					return "Bolívie";
 
 				/// <summary>
-				/// Bonaire, Svatý Eustach a Saba (535)
+				/// Bonaire, Svatý Eustach a Saba ; Karibské Nizozemsko (535)
 				/// </summary>
 				case Alpha3Country.BES:
 					return "Bonaire, Svatý Eustach a Saba";
@@ -279,7 +279,7 @@ namespace ISO3166CZ
 					return "Dánsko";
 
 				/// <summary>
-				/// Demokratická republika Kongo (180)
+				/// Demokratická republika Kongo ; Kongo – Kinshasa (180)
 				/// </summary>
 				case Alpha3Country.COD:
 					return "Demokratická republika Kongo";
@@ -339,7 +339,7 @@ namespace ISO3166CZ
 					return "Faerské ostrovy";
 
 				/// <summary>
-				/// Falklandy (Malvíny) (238)
+				/// Falklandy (Malvíny) ; Falklandské ostrovy (238)
 				/// </summary>
 				case Alpha3Country.FLK:
 					return "Falklandy (Malvíny)";
@@ -375,7 +375,7 @@ namespace ISO3166CZ
 					return "Francouzská Guyana";
 
 				/// <summary>
-				/// Francouzská jižní a antarktická území (260)
+				/// Francouzská jižní a antarktická území ; Francouzská jižní území (260)
 				/// </summary>
 				case Alpha3Country.ATF:
 					return "Francouzská jižní a antarktická území";
@@ -489,7 +489,7 @@ namespace ISO3166CZ
 					return "Honduras";
 
 				/// <summary>
-				/// Hongkong (344)
+				/// Hongkong ; Hongkong – ZAO Číny (344)
 				/// </summary>
 				case Alpha3Country.HKG:
 					return "Hongkong";
@@ -681,7 +681,7 @@ namespace ISO3166CZ
 					return "Komory";
 
 				/// <summary>
-				/// Kongo (178)
+				/// Kongo ; Kongo – Brazzaville (178)
 				/// </summary>
 				case Alpha3Country.COG:
 					return "Kongo";
@@ -771,7 +771,7 @@ namespace ISO3166CZ
 					return "Lucembursko";
 
 				/// <summary>
-				/// Macao (446)
+				/// Macao ; Macao – ZAO Číny (446)
 				/// </summary>
 				case Alpha3Country.MAC:
 					return "Macao";
@@ -915,7 +915,7 @@ namespace ISO3166CZ
 					return "Mosambik";
 
 				/// <summary>
-				/// Myanmar (104)
+				/// Myanmar ; Myanmar (Barma) (104)
 				/// </summary>
 				case Alpha3Country.MMR:
 					return "Myanmar";
@@ -1017,7 +1017,7 @@ namespace ISO3166CZ
 					return "Palau";
 
 				/// <summary>
-				/// Palestinská autonomie (275)
+				/// Palestinská autonomie ; Palestinská území (275)
 				/// </summary>
 				case Alpha3Country.PSE:
 					return "Palestinská autonomie";
@@ -1209,13 +1209,13 @@ namespace ISO3166CZ
 					return "Spojené arabské emiráty";
 
 				/// <summary>
-				/// Spojené království Velké Británie a Severního Irska (826)
+				/// Spojené království Velké Británie a Severního Irska ; Spojené království (826)
 				/// </summary>
 				case Alpha3Country.GBR:
 					return "Spojené království Velké Británie a Severního Irska";
 
 				/// <summary>
-				/// Spojené státy americké (840)
+				/// Spojené státy americké ; Spojené státy (840)
 				/// </summary>
 				case Alpha3Country.USA:
 					return "Spojené státy americké";
@@ -1251,7 +1251,7 @@ namespace ISO3166CZ
 					return "Surinam";
 
 				/// <summary>
-				/// Svatá Helena, Ascension a Tristan da Cunha (654)
+				/// Svatá Helena, Ascension a Tristan da Cunha ; Svatá Helena (654)
 				/// </summary>
 				case Alpha3Country.SHN:
 					return "Svatá Helena, Ascension a Tristan da Cunha";
@@ -1275,13 +1275,13 @@ namespace ISO3166CZ
 					return "Svatý Kryštof a Nevis";
 
 				/// <summary>
-				/// Svatý Martin (francouzská část) (663)
+				/// Svatý Martin (francouzská část) ; Svatý Martin (Francie) (663)
 				/// </summary>
 				case Alpha3Country.MAF:
 					return "Svatý Martin (francouzská část)";
 
 				/// <summary>
-				/// Svatý Martin (nizozemská část) (534)
+				/// Svatý Martin (nizozemská část) ; Svatý Martin (Nizozemsko) (534)
 				/// </summary>
 				case Alpha3Country.SXM:
 					return "Svatý Martin (nizozemská část)";
@@ -1311,7 +1311,7 @@ namespace ISO3166CZ
 					return "Sýrie";
 
 				/// <summary>
-				/// Šalomounovy ostrovy (90)
+				/// Šalomounovy ostrovy ; Šalamounovy ostrovy (90)
 				/// </summary>
 				case Alpha3Country.SLB:
 					return "Šalomounovy ostrovy";
@@ -1323,7 +1323,7 @@ namespace ISO3166CZ
 					return "Španělsko";
 
 				/// <summary>
-				/// Špicberky a Jan Mayen (744)
+				/// Špicberky a Jan Mayen ; Špicberky a Jan Mayen (744)
 				/// </summary>
 				case Alpha3Country.SJM:
 					return "Špicberky a Jan Mayen";

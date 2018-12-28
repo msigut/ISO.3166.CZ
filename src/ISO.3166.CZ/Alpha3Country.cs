@@ -113,7 +113,7 @@ namespace ISO3166CZ
 		/// </summary>
 		BOL = 68,
 		/// <summary>
-		/// Bonaire, Svatý Eustach a Saba (535)
+		/// Bonaire, Svatý Eustach a Saba ; Karibské Nizozemsko (535)
 		/// </summary>
 		BES = 535,
 		/// <summary>
@@ -185,7 +185,7 @@ namespace ISO3166CZ
 		/// </summary>
 		DNK = 208,
 		/// <summary>
-		/// Demokratická republika Kongo (180)
+		/// Demokratická republika Kongo ; Kongo – Kinshasa (180)
 		/// </summary>
 		COD = 180,
 		/// <summary>
@@ -225,7 +225,7 @@ namespace ISO3166CZ
 		/// </summary>
 		FRO = 234,
 		/// <summary>
-		/// Falklandy (Malvíny) (238)
+		/// Falklandy (Malvíny) ; Falklandské ostrovy (238)
 		/// </summary>
 		FLK = 238,
 		/// <summary>
@@ -249,7 +249,7 @@ namespace ISO3166CZ
 		/// </summary>
 		GUF = 254,
 		/// <summary>
-		/// Francouzská jižní a antarktická území (260)
+		/// Francouzská jižní a antarktická území ; Francouzská jižní území (260)
 		/// </summary>
 		ATF = 260,
 		/// <summary>
@@ -325,7 +325,7 @@ namespace ISO3166CZ
 		/// </summary>
 		HND = 340,
 		/// <summary>
-		/// Hongkong (344)
+		/// Hongkong ; Hongkong – ZAO Číny (344)
 		/// </summary>
 		HKG = 344,
 		/// <summary>
@@ -453,7 +453,7 @@ namespace ISO3166CZ
 		/// </summary>
 		COM = 174,
 		/// <summary>
-		/// Kongo (178)
+		/// Kongo ; Kongo – Brazzaville (178)
 		/// </summary>
 		COG = 178,
 		/// <summary>
@@ -513,7 +513,7 @@ namespace ISO3166CZ
 		/// </summary>
 		LUX = 442,
 		/// <summary>
-		/// Macao (446)
+		/// Macao ; Macao – ZAO Číny (446)
 		/// </summary>
 		MAC = 446,
 		/// <summary>
@@ -609,7 +609,7 @@ namespace ISO3166CZ
 		/// </summary>
 		MOZ = 508,
 		/// <summary>
-		/// Myanmar (104)
+		/// Myanmar ; Myanmar (Barma) (104)
 		/// </summary>
 		MMR = 104,
 		/// <summary>
@@ -677,7 +677,7 @@ namespace ISO3166CZ
 		/// </summary>
 		PLW = 585,
 		/// <summary>
-		/// Palestinská autonomie (275)
+		/// Palestinská autonomie ; Palestinská území (275)
 		/// </summary>
 		PSE = 275,
 		/// <summary>
@@ -805,11 +805,11 @@ namespace ISO3166CZ
 		/// </summary>
 		ARE = 784,
 		/// <summary>
-		/// Spojené království Velké Británie a Severního Irska (826)
+		/// Spojené království Velké Británie a Severního Irska ; Spojené království (826)
 		/// </summary>
 		GBR = 826,
 		/// <summary>
-		/// Spojené státy americké (840)
+		/// Spojené státy americké ; Spojené státy (840)
 		/// </summary>
 		USA = 840,
 		/// <summary>
@@ -833,7 +833,7 @@ namespace ISO3166CZ
 		/// </summary>
 		SUR = 740,
 		/// <summary>
-		/// Svatá Helena, Ascension a Tristan da Cunha (654)
+		/// Svatá Helena, Ascension a Tristan da Cunha ; Svatá Helena (654)
 		/// </summary>
 		SHN = 654,
 		/// <summary>
@@ -849,11 +849,11 @@ namespace ISO3166CZ
 		/// </summary>
 		KNA = 659,
 		/// <summary>
-		/// Svatý Martin (francouzská část) (663)
+		/// Svatý Martin (francouzská část) ; Svatý Martin (Francie) (663)
 		/// </summary>
 		MAF = 663,
 		/// <summary>
-		/// Svatý Martin (nizozemská část) (534)
+		/// Svatý Martin (nizozemská část) ; Svatý Martin (Nizozemsko) (534)
 		/// </summary>
 		SXM = 534,
 		/// <summary>
@@ -873,7 +873,7 @@ namespace ISO3166CZ
 		/// </summary>
 		SYR = 760,
 		/// <summary>
-		/// Šalomounovy ostrovy (90)
+		/// Šalomounovy ostrovy ; Šalamounovy ostrovy (90)
 		/// </summary>
 		SLB = 90,
 		/// <summary>
@@ -881,7 +881,7 @@ namespace ISO3166CZ
 		/// </summary>
 		ESP = 724,
 		/// <summary>
-		/// Špicberky a Jan Mayen (744)
+		/// Špicberky a Jan Mayen ; Špicberky a Jan Mayen (744)
 		/// </summary>
 		SJM = 744,
 		/// <summary>

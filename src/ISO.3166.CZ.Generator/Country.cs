@@ -1,8 +1,8 @@
-﻿using CsvHelper.Configuration;
+using CsvHelper.Configuration;
 
 namespace ISO3166CZ
 {
-	internal class CsvCountry
+	internal class GeneratorCountry
 	{
 		/// <summary>
 		/// ISO 3166-1 numeric je trojciferný systém, který je shodný se systémem definovaným Statistickým oddělením OSN.
@@ -25,9 +25,9 @@ namespace ISO3166CZ
 	/// <remarks>
 	/// mapovani CSV
 	/// </remarks>
-	internal class CsvCountryMapper : ClassMap<CsvCountry>
+	internal class GeneratorCountryMapper : ClassMap<GeneratorCountry>
 	{
-		public CsvCountryMapper()
+		public GeneratorCountryMapper()
 		{
 			var i = 0;
 			Map(m => m.Numeric).Index(i++);

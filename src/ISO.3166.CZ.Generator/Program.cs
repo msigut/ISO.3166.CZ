@@ -1,7 +1,11 @@
-using CsvHelper;
-using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using CsvHelper;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace ISO3166CZ.Generator
 {
@@ -9,50 +13,80 @@ namespace ISO3166CZ.Generator
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
-
 			var enumAlfa2 = new StringBuilder();
 			var enumAlfa3 = new StringBuilder();
 			var nameAlfa2 = new StringBuilder();
 			var nameAlfa3 = new StringBuilder();
 
+			#region JSON
+
+			var jsonCountries = new List<GeneratorCountry>();
+
+			// deserialize JSON directly from a file
+			var jsonStr = File.ReadAllText(@"..\..\..\..\..\data\territories.json");
+			var obj = (JObject)JsonConvert.DeserializeObject(jsonStr);
+
+			// get all 2-char territories
+			var all = (JObject)obj["main"]["cs"]["localeDisplayNames"]["territories"];
+			foreach (var item in all.Properties())
+			{
+				if (!Regex.IsMatch(item.Name, "^[a-z]{2}$", RegexOptions.Compiled | RegexOptions.IgnoreCase))
+					continue;
+
+				jsonCountries.Add(new GeneratorCountry()
+				{
+					Alpha2 = item.Name,
+					Name = item.Value.ToString()
+				});
+			}
+
+			#endregion
+
+			#region CSV
+
 			using (var reader = File.OpenText(@"..\..\..\..\..\data\wiki.countries.csv"))
 			{
 				var csv = new CsvReader(reader);
-				csv.Configuration.RegisterClassMap<CsvCountryMapper>();
+				csv.Configuration.RegisterClassMap<GeneratorCountryMapper>();
 
-				var countries = csv.GetRecords<CsvCountry>();
+				var countries = csv.GetRecords<GeneratorCountry>();
 				foreach (var c in countries)
 				{
+					// find JSON territory, when different names, use for comments
+					var jsonName = jsonCountries.Where(x => x.Alpha2 == c.Alpha2).Select(x => x.Name).FirstOrDefault();
+					jsonName = c.Name.Trim() == jsonName.Trim() ? "" : $" ; {jsonName}";
+
 					var tab = "\t\t";
 					// Alfa2 - enum
 					enumAlfa2.AppendLine($"{tab}/// <summary>");
-					enumAlfa2.AppendLine($"{tab}/// {c.Name} ({c.Numeric})");
+					enumAlfa2.AppendLine($"{tab}/// {c.Name}{jsonName} ({c.Numeric})");
 					enumAlfa2.AppendLine($"{tab}/// </summary>");
 					enumAlfa2.AppendLine($"{tab}{c.Alpha2} = {c.Numeric},");
 					// Alfa3 - enum
 					enumAlfa3.AppendLine($"{tab}/// <summary>");
-					enumAlfa3.AppendLine($"{tab}/// {c.Name} ({c.Numeric})");
+					enumAlfa3.AppendLine($"{tab}/// {c.Name}{jsonName} ({c.Numeric})");
 					enumAlfa3.AppendLine($"{tab}/// </summary>");
 					enumAlfa3.AppendLine($"{tab}{c.Alpha3} = {c.Numeric},");
 
 					tab = "\t\t\t\t";
 					// Alfa2 - name
 					nameAlfa2.AppendLine($"{tab}/// <summary>");
-					nameAlfa2.AppendLine($"{tab}/// {c.Name} ({c.Numeric})");
+					nameAlfa2.AppendLine($"{tab}/// {c.Name}{jsonName} ({c.Numeric})");
 					nameAlfa2.AppendLine($"{tab}/// </summary>");
 					nameAlfa2.AppendLine($"{tab}case Alpha2Country.{c.Alpha2}:");
 					nameAlfa2.AppendLine($"{tab}\treturn \"{c.Name}\";");
 					nameAlfa2.AppendLine();
 					// Alfa3 - name
 					nameAlfa3.AppendLine($"{tab}/// <summary>");
-					nameAlfa3.AppendLine($"{tab}/// {c.Name} ({c.Numeric})");
+					nameAlfa3.AppendLine($"{tab}/// {c.Name}{jsonName} ({c.Numeric})");
 					nameAlfa3.AppendLine($"{tab}/// </summary>");
 					nameAlfa3.AppendLine($"{tab}case Alpha3Country.{c.Alpha3}:");
 					nameAlfa3.AppendLine($"{tab}\treturn \"{c.Name}\";");
 					nameAlfa3.AppendLine();
 				}
 			}
+
+			#endregion
 
 			#region C# code gragments
 
